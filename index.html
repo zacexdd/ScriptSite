@@ -4,79 +4,180 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScriptXE – Redirecting</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Exo+2:wght@400;500&display=swap" rel="stylesheet">
-    <script>setTimeout(function(){ window.location.href='https://novaxz.com'; }, 1000);</script>
+
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background: #0a0a0a;
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Exo 2', sans-serif;
-            padding: 20px;
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
         }
 
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: 0.1em;
-            margin-bottom: 48px;
-            opacity: 0.5;
+        body{
+            background:#050505;
+            color:#fff;
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:20px;
+            overflow:hidden;
+            font-family:'Exo 2',sans-serif;
         }
 
-        .icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #F5AD1E, #F27621);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            margin-bottom: 24px;
-            box-shadow: 0 0 32px rgba(242,118,33,0.35);
+        .bg-glow{
+            position:absolute;
+            width:400px;
+            height:400px;
+            background:#F27621;
+            filter:blur(140px);
+            opacity:.12;
+            border-radius:50%;
+            animation:float 6s ease-in-out infinite alternate;
         }
 
-        h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            margin-bottom: 10px;
+        @keyframes float{
+            from{
+                transform:translateY(-20px);
+            }
+            to{
+                transform:translateY(20px);
+            }
         }
 
-        p {
-            font-size: 14px;
-            color: #777;
-            margin-bottom: 36px;
+        .container{
+            position:relative;
+            z-index:2;
+            width:100%;
+            max-width:420px;
+            background:rgba(15,15,15,.9);
+            border:1px solid rgba(255,255,255,.06);
+            border-radius:24px;
+            padding:38px 28px;
+            text-align:center;
+            backdrop-filter:blur(10px);
+            box-shadow:0 0 40px rgba(0,0,0,.5);
         }
 
-        .btn {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: #fff;
-            background: linear-gradient(135deg, #F5AD1E, #F27621);
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            box-shadow: 0 4px 20px rgba(242,118,33,0.4);
+        .logo{
+            font-family:'Orbitron',sans-serif;
+            font-size:15px;
+            letter-spacing:.15em;
+            opacity:.6;
+            margin-bottom:40px;
+        }
+
+        .loader{
+            width:82px;
+            height:82px;
+            margin:0 auto 28px;
+            border-radius:50%;
+            border:5px solid rgba(255,255,255,.08);
+            border-top:5px solid #F5AD1E;
+            border-right:5px solid #F27621;
+            animation:spin 1s linear infinite;
+            box-shadow:0 0 30px rgba(242,118,33,.25);
+        }
+
+        @keyframes spin{
+            to{
+                transform:rotate(360deg);
+            }
+        }
+
+        h1{
+            font-family:'Orbitron',sans-serif;
+            font-size:22px;
+            line-height:1.4;
+            letter-spacing:.06em;
+            margin-bottom:14px;
+        }
+
+        p{
+            color:#7d7d7d;
+            font-size:14px;
+            line-height:1.7;
+            margin-bottom:34px;
+        }
+
+        .btn{
+            display:inline-block;
+            width:100%;
+            text-decoration:none;
+            background:linear-gradient(135deg,#F5AD1E,#F27621);
+            color:#fff;
+            padding:15px 20px;
+            border-radius:12px;
+            font-family:'Orbitron',sans-serif;
+            font-size:13px;
+            letter-spacing:.08em;
+            font-weight:700;
+            box-shadow:0 6px 25px rgba(242,118,33,.35);
+            transition:.2s ease;
+        }
+
+        .btn:hover{
+            transform:scale(1.02);
+        }
+
+        .small{
+            margin-top:18px;
+            color:#555;
+            font-size:12px;
+        }
+
+        @media(max-width:480px){
+
+            .container{
+                padding:34px 22px;
+            }
+
+            h1{
+                font-size:18px;
+            }
+
+            p{
+                font-size:13px;
+            }
+
+            .loader{
+                width:74px;
+                height:74px;
+            }
         }
     </style>
+
+  
+
 </head>
 <body>
-    <div class="logo">SCRIPTXE HUB</div>
-    <div class="icon">⬇️</div>
-    <h1>REDIRECTING TO DOWNLOAD</h1>
-    <p>If you are not redirected automatically, tap the button below.</p>
-    <a class="btn" href="https://novaxz.com">DOWNLOAD NOW</a>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+
+        <div class="logo">SCRIPTXE HUB</div>
+
+        <div class="loader"></div>
+
+        <h1>REDIRECTING...</h1>
+
+        <p>
+            Taking you to your download destination.
+            <br>
+            If nothing happens, use the button below.
+        </p>
+
+        <a class="btn" href="https://novaxz.com">
+            CONTINUE MANUALLY
+        </a>
+
+        <div class="small">
+            Destination: novaxz.com
+        </div>
+
+    </div>
+
 </body>
 </html>
